@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# NAME		=	Telerising API
+# Description	=	Start/Stop Script for Telerising API
+# Author	=	SnowCoder404
+
+action="$1"
+
+case "$action" in
+
+        start)
+                cd /opt/telerising/
+		./api &>/dev/null &
+		echo "Telerising API wurde gestartet."
+            ;;
+        stop)
+		killall api
+            ;;
+	status)
+		if pgrep -x "api" >/dev/null
+		then
+		  	echo "Telerising API is running."
+		else
+			echo "Telerising API stopped."
+		fi
+	 ;;
+        restart|force-reload)
+            "$0" stop
+            "$0" start
+            exit
+         ;;
+        enable)
+                /sbin/update-rc.d telerising defaults
+         ;;
+        *)
+                echo "usage: $0 (start|stop|restart|enable|help)"
+                exit 1
+        ;;
+esac

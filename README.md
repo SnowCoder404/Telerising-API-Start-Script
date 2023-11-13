@@ -3,14 +3,14 @@
 
 Ein init.d Script zum Starten und Stopen von Telerising-API.
 
+https://github.com/sunsettrack4/telerising-api
 
 Zum instaliren :
 
-wget https://github.com/sunsettrack4/telerising-api/blob/main/telerising-v0.10.9_x86-64_linux.zip<br>
 cpan install DateTime::Format::Strptime<br>
 cpan install  JSON;<br>
 cpan install  JSON::Parse<br> 
-cpan install  HTTP::Request ();<br>
+cpan install  HTTP::Request;<br>
 cpan install  LWP::UserAgent;<br>
 cpan install  URI::Escape;<br>
 cpan install  UUID::Tiny <br>
